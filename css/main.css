@@ -149,7 +149,19 @@ header {
 
 @media (max-width: 640px) {
   .menu .menu__list {
-    display: none;
+    width: 153px;
+    background-color: #7B6152;
+    color: #FFF8F3;
+    flex-direction: column;
+    padding: 25px 35px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    transform: translateY(-130%);
+    transition: transform .5s ease;
+  }
+  .menu .menu--open {
+    transform: translateY(5%);
   }
   .menu__btn {
     display: flex;
