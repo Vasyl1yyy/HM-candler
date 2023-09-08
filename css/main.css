@@ -36,6 +36,43 @@ button {
   margin: 0 auto;
 }
 
+.title {
+  font-size: 40px;
+  margin-bottom: 15px;
+  font-family: 'Yeseva One', cursive;
+  font-weight: 400;
+}
+
+.btn {
+  background-color: #FFBD59;
+  padding: 18px 40px;
+  font-weight: 600;
+}
+
+.section--decor::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: url(../img/section-decor.png);
+  width: 22px;
+  height: 30px;
+}
+
+.section--decor::after {
+  content: '';
+  position: absolute;
+  background-color: #7B6152;
+  left: 20px;
+  bottom: 7px;
+  width: 1000%;
+  height: 1px;
+}
+
+.section--decor {
+  position: relative;
+}
+
 .menu__btn {
   display: none;
   width: 30px;
@@ -132,6 +169,7 @@ button {
   background-color: #A5978E;
   padding: 50px 0 60px;
   color: #FAFAFA;
+  margin-bottom: 150px;
 }
 
 .about__inner {
@@ -159,31 +197,58 @@ button {
   gap: 20px;
   padding-left: 110px;
   padding-bottom: 48px;
-  position: relative;
-}
-
-.about__list::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-image: url(../img/about-decor.png);
-  width: 22px;
-  height: 30px;
-}
-
-.about__list::after {
-  content: '';
-  position: absolute;
-  background-color: #7B6152;
-  left: 20px;
-  bottom: 7px;
-  width: 1000%;
-  height: 1px;
 }
 
 .about__item-text {
   font-size: 11px;
+}
+
+.section__inner {
+  display: grid;
+  grid-template-columns: 370px auto;
+}
+
+.section__content {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-bottom: 92px;
+}
+
+.section {
+  padding-bottom: 150px;
+}
+
+.products__content {
+  gap: 50px 90px;
+}
+
+.products__item {
+  margin: 0 auto;
+  width: 290px;
+  text-align: center;
+}
+
+.products__item-img {
+  margin-bottom: 8px;
+}
+
+.products__item-price {
+  margin-bottom: 12px;
+  font-family: 'Yeseva One', cursive;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.products__item-title {
+  margin-bottom: 16px;
+  font-family: 'Yeseva One', cursive;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.products__item-text {
+  margin-bottom: 27px;
+  font-size: 12px;
 }
 
 .footer {
@@ -230,6 +295,16 @@ button {
   .about__list {
     padding-left: 20px;
   }
+  .section__inner {
+    grid-template-columns: 290px auto;
+    gap: 0 10px;
+  }
+  .products__content {
+    gap: 67px;
+  }
+  .section__text {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -244,6 +319,13 @@ button {
   .footer__social {
     justify-content: center;
   }
+  .section__inner {
+    grid-template-columns: 190px auto;
+    gap: 0 10px;
+  }
+  .products__content {
+    gap: 30px 16px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -255,6 +337,13 @@ button {
   }
   .container {
     max-width: 660px;
+  }
+  .title {
+    font-size: 15px;
+  }
+  .btn {
+    font-size: 12px;
+    padding: 10px 30px;
   }
   .phone::before {
     content: '';
@@ -300,6 +389,20 @@ button {
   .about__img-2 {
     width: 190px;
   }
+  .products__item {
+    width: 200px;
+  }
+  .products__item-img {
+    width: 200px;
+  }
+  .products__item-text {
+    font-size: 8px;
+    margin-bottom: 18px;
+  }
+  .products__item-price,.products__item-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -323,6 +426,13 @@ button {
   }
   .menu {
     order: 1;
+  }
+  .section__inner {
+    display: block;
+    text-align: center;
+  }
+  .section__descr {
+    margin-bottom: 30px;
   }
 }
 
@@ -379,6 +489,19 @@ button {
   .about__img-2 {
     width: 140px;
   }
+  .about {
+    margin-bottom: 50px;
+  }
+  .section {
+    margin-bottom: 50px;
+  }
+  .section__content {
+    padding-bottom: 62px;
+  }
+  .section__descr {
+    margin: 0 auto 30px;
+    width: 300px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -406,5 +529,35 @@ button {
   }
   .about {
     padding: 25px 0;
+  }
+  .section__descr {
+    margin: 0 auto 25px;
+    width: 235px;
+  }
+  .products__item {
+    width: 150px;
+  }
+  .products__content {
+    gap: 40px 7px;
+  }
+  .products__item-img {
+    width: 150px;
+  }
+  .section__text {
+    font-size: 8px;
+  }
+  .btn {
+    font-size: 8px;
+    padding: 8px 20px;
+  }
+  .products__item-price {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+  .products__item-title {
+    font-size: 10px;
+  }
+  .products__item-text {
+    margin-bottom: 16px;
   }
 }
