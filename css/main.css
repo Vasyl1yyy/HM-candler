@@ -29,6 +29,11 @@ button {
   cursor: pointer;
 }
 
+::selection {
+  background-color: #7B6152;
+  color: #FFF8F3;
+}
+
 .container {
   max-width: 1180px;
   padding-left: 10px;
@@ -251,6 +256,44 @@ button {
   font-size: 12px;
 }
 
+.steps__list {
+  gap: 70px 25px;
+  counter-reset: number;
+}
+
+.steps__item {
+  display: flex;
+  gap: 0 40px;
+  list-style-type: none;
+  position: relative;
+}
+
+.steps__item::before {
+  counter-increment: number;
+  content: '0' counter(number);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 30px;
+  color: #BEA495;
+  font-family: 'Yeseva One', cursive;
+}
+
+.steps__item--even::before {
+  left: auto;
+  right: 0;
+}
+
+.steps__item:nth-child(n+10):before {
+  content: counter(number);
+}
+
+.steps__item-text {
+  flex-basis: 174px;
+  padding-bottom: 40px;
+  font-size: 14px;
+}
+
 .footer {
   padding-top: 40px;
   padding-bottom: 35px;
@@ -274,6 +317,15 @@ button {
 
 .email {
   margin: 16px 0;
+}
+
+@media (max-width: 1050px) {
+  .steps__list {
+    gap: 37px 25px;
+  }
+  .steps__item {
+    gap: 0 30px;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -304,6 +356,28 @@ button {
   }
   .section__text {
     font-size: 10px;
+  }
+}
+
+@media (max-width: 960px) {
+  .steps__list {
+    gap: 37px 35px;
+  }
+  .steps__item {
+    gap: 0 20px;
+  }
+  .steps__item-img {
+    width: 85px;
+    object-fit: cover;
+  }
+  .steps__item-text {
+    font-size: 8px;
+  }
+  .steps__item::before {
+    font-size: 20px;
+  }
+  .steps__title {
+    font-size: 30px;
   }
 }
 
@@ -429,10 +503,10 @@ button {
   }
   .section__inner {
     display: block;
-    text-align: center;
   }
   .section__descr {
     margin-bottom: 30px;
+    text-align: center;
   }
 }
 
@@ -501,6 +575,24 @@ button {
   .section__descr {
     margin: 0 auto 30px;
     width: 300px;
+  }
+  .steps__list {
+    gap: 25px 40px;
+  }
+}
+
+@media (max-width: 404px) {
+  .steps__list {
+    gap: 20px 25px;
+  }
+  .steps__item {
+    gap: 0 16px;
+  }
+  .steps__item-img {
+    width: 66px;
+  }
+  .steps__item-text {
+    font-size: 6px;
   }
 }
 
