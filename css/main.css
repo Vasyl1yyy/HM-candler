@@ -46,6 +46,10 @@ button {
   background-color: #FFF8F3;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 1180px;
   padding-left: 10px;
@@ -1000,7 +1004,7 @@ button {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 400px) {
   .top__img-x {
     width: 150px;
   }
