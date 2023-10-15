@@ -34,6 +34,18 @@ button {
   color: #FFF8F3;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7B6152;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #FFF8F3;
+}
+
 .container {
   max-width: 1180px;
   padding-left: 10px;
@@ -448,7 +460,8 @@ button {
 }
 
 .certificates__slider {
-  width: 760px;
+  width: 1135px;
+  overflow: hidden;
 }
 
 .certificates__descr {
@@ -460,8 +473,116 @@ button {
 }
 
 .certificates__content .swiper-pagination {
-  bottom: 50px;
+  bottom: 60px;
+  text-align: left;
 } 
+
+.accordeon {
+
+}
+
+.accordeon__item {
+  background: #FAFAFA;
+  margin-bottom: 10px;
+}
+
+.accordeon__title {
+  font-size: 16px;
+  font-family: 'Yeseva One', cursive;
+  display: block;
+  background-color: transparent;
+  padding: 16px 50px 16px 13px;
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+.accordeon__title::after {
+  content: '';
+  background-image: url(../img/arrow.svg);
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 26px;
+  top: 17px;
+}
+
+.accordeon__text {
+  opacity: 0;
+  max-height: 0;
+  transition: all .3s;
+}
+
+.accordeon__text.accordeon__text--visible {
+  opacity: 1;
+  padding: 10px;
+}
+
+.accordeon__title.accordeon__title--active::after{
+  transform: rotate(180deg);
+}
+
+.promo {
+  background-image: url(../img/promo-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 140px 0;
+}
+
+.promo__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.promo__inner-text {
+  color: #fff;
+}
+
+.contacts {
+  padding: 150px 0 50px;
+}
+
+.contacts__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form {
+  background-color: #fff;
+  width: 664px;
+  padding: 72px 42px 67px;
+  box-shadow: 0px 4px 11px 0px rgba(199, 175, 165, 0.30);
+}
+
+.form__title {
+  margin-bottom: 50px;
+}
+
+.form__input {
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+  padding: 7px 10px;
+  color: #000;
+}
+
+.form__input::placeholder {
+  color: #b3b3b3;
+  font-size: 14px;
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.form-btn {
+  margin-top: 50px;
+}
 
 .footer {
   padding-top: 40px;
@@ -534,6 +655,21 @@ button {
   }
   .team {
     padding: 50px 0;
+  }
+  .feedback__inner {
+    grid-template-columns: 260px auto;
+  }
+  .feedback__slider {
+    width: 690px;
+  }
+  .certificates__content img {
+    width: 280px;
+  }
+  .certificates__slider {
+    width: 880px;
+  }
+  .contacts-img {
+    width: 335px;
   }
 }
 
@@ -683,6 +819,35 @@ button {
   .team__content {
     gap: 14px;
   }
+  .feedback__item-video {
+    width: 200px;
+  }
+  .feedback__item-img {
+    width: 200px;
+  }
+  .feedback__slider {
+    width: 440px;
+  }
+  .feedback__item-content {
+    padding-bottom: 40px;
+  }
+  .promo-btn {
+    min-width: 135px;
+    text-align: center;
+  }
+  .contacts-img {
+    width: 187px;
+  }
+  .promo {
+    padding: 67px 0;
+  }
+  .form {
+    width: 400px;
+    padding: 30px;
+  }
+  .form-btn {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -794,6 +959,27 @@ button {
   .section {
     margin-bottom: 50px;
   }
+  .certificates__content .swiper-pagination {
+    text-align: center;
+  }
+  .certificates__content img {
+    width: 200px;
+  }
+  .certificates__slider {
+    width: 600px;
+  }
+  .contacts-img {
+    display: none;
+  }
+  .form__input::placeholder {
+    font-size: 10px;
+  }
+  .promo-btn {
+    min-width: 90px;
+  }
+  .contacts {
+    padding-top: 50px;
+  }
 }
 
 @media (max-width: 404px) {
@@ -893,5 +1079,26 @@ button {
   }
   .team__item {
     margin-left: 20px;
+  }
+  .feedback__item {
+    grid-template-columns: auto;
+    text-align: center;
+  }
+  .feedback__slider {
+    width: 250px;
+    margin: 0 auto;
+  }
+  .feedback__item-img {
+    width: 250px;
+    margin: 0 auto 30px;
+  }
+  .feedback__item-video {
+    width: 250px;
+  }
+  .feedback__item-btn {
+    bottom: 0;
+    left: 0;
+    max-width: 100px;
+    margin: 0 auto;
   }
 }
